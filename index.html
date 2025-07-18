@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motivational Quotes App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+  <div class="bg-white shadow-2xl p-8 rounded-xl max-w-lg w-full text-center space-y-6">
+    <h1 class="text-2xl font-bold text-gray-800">🌟 Daily Motivation</h1>
+
+    <div class="flex justify-center gap-4">
+      <button onclick="showQuote('english')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-xl">
+        English Quotes
+      </button>
+      <button onclick="showQuote('urdu')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">
+        اردو اقتباسات
+      </button>
+    </div>
+
+    <p id="quoteDisplay" class="text-xl font-medium text-gray-700 min-h-[60px] leading-relaxed"></p>
+  </div>
+    <script src="script.js"></script>
+</body>
+</html>
