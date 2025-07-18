@@ -6,22 +6,36 @@
   <title>Motivational Quotes App</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center min-h-screen p-4">
 
-  <div class="bg-white shadow-2xl p-8 rounded-xl max-w-lg w-full text-center space-y-6">
-    <h1 class="text-2xl font-bold text-gray-800">🌟 Daily Motivation</h1>
+  <div class="bg-white/10 backdrop-blur-md shadow-2xl p-8 rounded-3xl max-w-lg w-full text-center space-y-6 border border-white/20">
+    <h1 class="text-3xl md:text-4xl font-bold text-cyan-300 tracking-wide">🌟 Daily Motivation</h1>
 
-    <div class="flex justify-center gap-4">
-      <button onclick="showQuote('english')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-xl">
+    <div class="flex justify-center gap-4 flex-wrap">
+      <button onclick="showQuote('english')" class="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-5 py-2.5 rounded-xl font-semibold shadow-md transition-all duration-300">
         English Quotes
       </button>
-      <button onclick="showQuote('urdu')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">
+      <button onclick="showQuote('urdu')" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-5 py-2.5 rounded-xl font-semibold shadow-md transition-all duration-300">
         اردو اقتباسات
+      </button>
+      <button onclick="copyQuote()" class="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-white px-5 py-2.5 rounded-xl font-semibold shadow-md transition-all duration-300">
+        📋 Copy Quote
       </button>
     </div>
 
-    <p id="quoteDisplay" class="text-xl font-medium text-gray-700 min-h-[60px] leading-relaxed"></p>
+    <p id="quoteDisplay" class="text-lg md:text-xl font-medium text-white min-h-[60px] leading-relaxed px-4 py-6 bg-white/5 border border-white/20 rounded-xl shadow-inner backdrop-blur-sm">
+      Click a button to get a quote 🚀
+    </p>
   </div>
-    <script src="script.js"></script>
+
+  <script>
+    function copyQuote() {
+      const quote = document.getElementById("quoteDisplay").textContent;
+      navigator.clipboard.writeText(quote).then(() => {
+        alert("Quote copied to clipboard!");
+      });
+    }
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>
