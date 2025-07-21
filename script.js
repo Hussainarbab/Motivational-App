@@ -1238,4 +1238,7 @@ const urduQuotes = [
 
       function copyQuote() {
       const quote = document.getElementById("quoteDisplay").textContent;
- 
+      navigator.clipboard.writeText(quote).then(() => {
+        alert("Quote copied to clipboard!");
+      });
+    }
